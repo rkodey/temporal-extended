@@ -1,0 +1,8 @@
+.env
+.secrets
+.vscode/bookmarks.json
+*.log
+build
+dist
+node_modules
+tmp

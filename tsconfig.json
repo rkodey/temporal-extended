@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "tsBuildInfoFile": "dist/tsBuildInfo.json",
+
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "moduleDetection": "force",
+    "types": ["node"],
+
+    "strict": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "verbatimModuleSyntax": true,
+
+    "exactOptionalPropertyTypes": false,
+    "noUncheckedIndexedAccess": false,
+  },
+  "exclude": [
+    "build",
+    "dist",
+    "node_modules",
+    "tmp"
+  ]
+}

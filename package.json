@@ -1,0 +1,54 @@
+{
+  "name": "temporal-extended",
+  "version": "0.0.1",
+  "description": "Temporal Extended, to include custom string formatting, parsing, and quality-of-life helper functions",
+  "keywords": [
+    "temporal",
+    "temporal-api",
+    "dayjs",
+    "strftime",
+    "date-fns",
+    "datetime",
+    "date",
+    "time",
+    "formatting"
+  ],
+  "author": "Rob Kodey <rob@Kodey.com>",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./format": "./dist/format/index.js",
+    "./strftime": "./dist/strftime/index.js",
+    "./parse": "./dist/parse/index.js"
+  },
+  "scripts": {
+    "clean": "rm -rf build dist",
+    "build": "tsc --build",
+    "rebuild": "node --run clean && node --run build",
+    "test": "node --test --experimental-test-coverage --enable-source-maps ./dist/**/*.test.js",
+    "snap": "node --test --test-update-snapshots      --enable-source-maps ./dist/**/*.test.js",
+    "lint": "eslint ."
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@eslint/compat": "^2.1.0",
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "~9.39.4",
+    "@types/node": "~25.6.2",
+    "dayjs": "^1.11.20",
+    "eslint": "~9.39.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-no-secrets": "^2.3.3",
+    "eslint-plugin-unicorn": "^64.0.0",
+    "globals": "^17.6.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.59.3"
+  }
+}
