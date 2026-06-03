@@ -5,6 +5,40 @@ import  {
 } from  './formatter.js';
 
 
+// @TODO add missing formats for dayjs -> moment.js formatting
+
+
+// dayjs / moment formatting
+// https://day.js.org/docs/en/display/format
+// https://github.com/iamkun/dayjs
+// https://momentjs.com/docs/#/displaying/
+// https://github.com/moment/moment
+
+// Mo   1st 2nd ... 11th 12th
+// Q    1 2 3 4
+// Qo   1st 2nd 3rd 4th
+// Do   1st 2nd ... 30th 31st
+// DDD  1 2 ... 364 365
+// DDDo   1st 2nd ... 364th 365th
+// DDDD   001 002 ... 364 365
+// do   0th 1st ... 5th 6th
+// e  0 1 ... 5 6   Day of Week (Locale)
+// E  1 2 ... 6 7   Day of Week (ISO)
+// w  1 2 ... 52 53
+// W  1 2 ... 52 53
+// wo   1st 2nd ... 52nd 53rd
+// Wo   1st 2nd ... 52nd 53rd
+// ww   01 02 ... 52 53
+// WW   01 02 ... 52 53
+// Y  1970 1971 ... 9999 +10000 +10001 Note: This complies with the ISO 8601 standard for dates past the year 9999
+// k  1 2 ... 23 24
+// kk   01 02 ... 23 24
+// S  0 1 ... 8 9
+// SS   00 01 ... 98 99
+// SSSS ... SSSSSSSSS   000[0..] 001[0..] ... 998[0..] 999[0..]
+// z or zz  EST CST ... MST PST
+// X  1360013296      Unix Timestamp
+// x  1360013296123   Unix Millisecond Timestamp
 const DAYJS       : {
   FORMAT_DEFAULT  : string
   REGEX_FORMAT    : RegExp

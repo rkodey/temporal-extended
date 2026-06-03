@@ -1,37 +1,49 @@
 
 # Temporal Extended (WIP)
 
-The extended object way
+### The extended object way
 ``` JavaScript
 import  'temporal-extended';
 
-Temporal.Now.zonedDateTimeISO().format('YYYY-MM-DD');
-Temporal.Now.plainDateTimeISO().strftime('%Y-%m-%d');
-Temporal.Now.plainDateISO().strftime('%F');
+const now = Temporal.Now.zonedDateTimeISO();
+const tomorrow = now.add({ days: 1 });
 
+now.format('YYYY-MM-DD');             // 2026-06-01
+now.strftime('%Y-%m-%d');             // 2026-06-01
+now.strftime('Today is: %A');         // Today is: Monday
+
+now.isBefore(tomorrow);               // true
+now.isAfter(tomorrow);                // false
 ```
 
 
-The functional way
+### The functional way
 ``` JavaScript
-import  format    from  'temporal-extended/format';
-import  strftime  from  'temporal-extended/strftime';
+import    format              from  'temporal-extended/format';
+import    strftime            from  'temporal-extended/strftime';
+import  { isBefore, isAfter } from  'temporal-extended/compare';
 
-format(Temporal.Now.zonedDateTimeISO(), 'YYYY-MM-DD');
-strftime(Temporal.Now.plainDateTimeISO(), '%Y-%m-%d');
-strftime(Temporal.Now.plainDateTimeISO(), '%F');
+const now = Temporal.Now.zonedDateTimeISO();
+const tomorrow = now.add({ days: 1 });
+
+format(now, 'YYYY-MM-DD');            // 2026-06-01
+strftime(now, '%Y-%m-%d');            // 2026-06-01
+strftime(now, 'Today is: %A');        // Today is: Monday
+
+isBefore(now, tomorrow);              // true
+isAfter(now, tomorrow);               // false
 ```
 
 <br>
 
-You can choose from two either interface, or use both:
+You can choose from either interface, or use both:
 
-1. Extend the Temporal date objects to include `format`, `strftime`, and other quality of life helper methods for a convenient readable interface.
-1. Import individual ( tree-shakable? ) functions for `format`, `strftime`, and the rest of the helpers while leaving the Temporal objects unmodified.
+1. Extend the Temporal date objects for a convenient highly readable interface.
+1. Import individual ( tree-shakable? ) functions while leaving the Temporal objects unmodified.
 
 <br>
 
-## Why the need to Extend?
+## Why do we need Temporal Extended?
 
 The new [JavaScript Temporal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal)
 API replacement for Date() is pretty nice.  It's very precise in its definition,
@@ -44,6 +56,15 @@ You see, there are these beings called Product Managers...
 And they like to design user interfaces that don't necessarily conform to ISO spec.
 
 So yeah...  We need a general purpose string formatter.
+
+<br>
+
+## Is Temporal Extended safe?
+
+- No automated CI/CD.
+- No runtime dependencies. No supply-chain exposure.
+- Temporal object extensions are purely additive and do not alter existing behavior.
+- But if you're paranoid, you can use the functional interface!
 
 <br>
 
@@ -65,3 +86,4 @@ Quality-of-Life Helpers
 - Add extended formats from moment.js into `format`
 - Add a `unicode` formatter to match `date-fns`
 - Add more optional helper function
+- Add custom parser, based on either regex or format tokens, maybe both
