@@ -18,9 +18,10 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
-    "./format": "./dist/format/index.js",
-    "./strftime": "./dist/strftime/index.js",
-    "./parse": "./dist/parse/index.js"
+    "./format": "./dist/format.js",
+    "./strftime": "./dist/strftime.js",
+    "./parse": "./dist/parse.js",
+    "./compare": "./dist/compare.js"
   },
   "scripts": {
     "clean": "rm -rf build dist",
@@ -33,7 +34,8 @@
   "files": [
     "dist/**/*.js",
     "dist/**/*.d.ts",
-    "README.md"
+    "LICENSE",
+    "*.md"
   ],
   "devDependencies": {
     "@eslint/compat": "^2.1.0",

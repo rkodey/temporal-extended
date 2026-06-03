@@ -1,8 +1,8 @@
-import  * as test         from  'node:test';
-import  assert            from  'node:assert';
-import  DAYJS             from  'dayjs';
-import  { TEST_DATES }    from  '../index.test.js';
-import                          '../index.js';
+import    * as test       from  'node:test';
+import    assert          from  'node:assert/strict';
+import    DAYJS           from  'dayjs';
+import  { TEST_DATES }    from  './index.test.js';
+import                          './index.js';
 
 
 // const TEST_DATES  = {

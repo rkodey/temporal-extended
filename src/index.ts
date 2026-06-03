@@ -1,7 +1,7 @@
-import  format    from  './format/index.js';
-import  strftime  from  './strftime/index.js';
-import  parse     from  './parse/index.js';
-import  { ZONE }  from  './formatter/index.js';
+import  format    from  './format.js';
+import  strftime  from  './strftime.js';
+import  parse     from  './parse.js';
+import  { ZONE }  from  './formatter.js';
 
 
 interface ExtendedBase {

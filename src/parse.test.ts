@@ -1,6 +1,6 @@
-import  * as test       from  'node:test';
-import  assert          from 'node:assert';
-import                  '../index.js';
+import  * as test         from  'node:test';
+import  assert            from  'node:assert/strict';
+import                          './index.js';
 
 
 await test.suite('Temporal-Extended parse', async () => {

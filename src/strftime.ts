@@ -3,7 +3,7 @@ import  {
   type DateTimeLike,
   type ReplaceFunction,
   Formatter,
-} from  '../formatter/index.js';
+} from  './formatter.js';
 
 
 const STRFTIME    : {
