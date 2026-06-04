@@ -6,37 +6,42 @@
 import  'temporal-extended';
 
 const now = Temporal.Now.zonedDateTimeISO();
-const tomorrow = now.add({ days: 1 });
-
 now.format('YYYY-MM-DD');             // 2026-06-01
 now.strftime('%Y-%m-%d');             // 2026-06-01
 now.strftime('Today is: %A');         // Today is: Monday
 
+const tomorrow = now.add({ days: 1 });
 now.isBefore(tomorrow);               // true
 now.isAfter(tomorrow);                // false
 ```
 
-
-### The functional way
+### The tree-shakable way
 ``` JavaScript
 import    format              from  'temporal-extended/format';
 import    strftime            from  'temporal-extended/strftime';
 import  { isBefore, isAfter } from  'temporal-extended/compare';
 
 const now = Temporal.Now.zonedDateTimeISO();
-const tomorrow = now.add({ days: 1 });
-
 format(now, 'YYYY-MM-DD');            // 2026-06-01
 strftime(now, '%Y-%m-%d');            // 2026-06-01
 strftime(now, 'Today is: %A');        // Today is: Monday
 
+const tomorrow = now.add({ days: 1 });
 isBefore(now, tomorrow);              // true
 isAfter(now, tomorrow);               // false
 ```
 
+### The full-functional way
+``` JavaScript
+import  * as TemporalEx       from  'temporal-extended/functional';
+
+TemporalEx.parse('2026-06-01').format('YYYY-MM'); // 2026-06
+```
+
+
 <br>
 
-You can choose from either interface, or use both:
+Choose either interface, or use both:
 
 1. Extend the Temporal date objects for a convenient highly readable interface.
 1. Import individual ( tree-shakable? ) functions while leaving the Temporal objects unmodified.

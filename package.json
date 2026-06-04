@@ -18,10 +18,11 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
+    "./compare": "./dist/compare.js",
     "./format": "./dist/format.js",
-    "./strftime": "./dist/strftime.js",
     "./parse": "./dist/parse.js",
-    "./compare": "./dist/compare.js"
+    "./strftime": "./dist/strftime.js",
+    "./functional": "./dist/functional.js"
   },
   "scripts": {
     "clean": "rm -rf build dist",
