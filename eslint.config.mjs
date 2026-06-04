@@ -138,9 +138,11 @@ export default tseslint.config(
       '@typescript-eslint/prefer-regexp-exec'             : ['off'],
       '@typescript-eslint/restrict-template-expressions'  : ['off'],
 
-      'import/no-relative-packages'       : ['off'],
+      'import/newline-after-import'       : ['error', { 'count': 2 }],
       'import/no-extraneous-dependencies' : ['error', { 'devDependencies': true }],
+      'import/no-relative-packages'       : ['off'],
       'import/no-useless-path-segments'   : ['off'],
+      'import/prefer-default-export'      : ['off'],
 
       // Recommended by https://typescript-eslint.io/troubleshooting/typed-linting/performance#eslint-plugin-import
       'import/named'                      : ['off'],

@@ -1,6 +1,6 @@
 {
   "name": "temporal-extended",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Temporal Extended, to include custom string formatting, parsing, and quality-of-life helper functions",
   "keywords": [
     "temporal",
@@ -15,6 +15,10 @@
   ],
   "author": "Rob Kodey <rob@Kodey.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rkodey/temporal-extended.git"
+  },
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
@@ -35,6 +39,7 @@
   "files": [
     "dist/**/*.js",
     "dist/**/*.d.ts",
+    "!dist/**/*.test.*",
     "LICENSE",
     "*.md"
   ],
