@@ -1,8 +1,4 @@
-import  {
-  type DateTimeLike,
-  type ReplaceFunction,
-  Formatter,
-} from  './formatter.js';
+import  { Formatter }   from  './formatter.js';
 
 
 // @TODO add missing formats for dayjs -> moment.js formatting
@@ -78,7 +74,7 @@ const DAYJS       : {
 };
 
 
-export default function format(date: DateTimeLike, formatStr ?: string) {
+export function format(date: DateTime, formatStr ?: string) {
   const str = formatStr || DAYJS.FORMAT_DEFAULT;    // eslint-disable-line @typescript-eslint/prefer-nullish-coalescing
   return str.replace(DAYJS.REGEX_FORMAT, (match: string, escaped_string: string) => {
     const fn      = DAYJS.FN_MAP[match] ?? (() => match);

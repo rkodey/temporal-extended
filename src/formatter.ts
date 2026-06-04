@@ -1,8 +1,4 @@
 
-export type DateTimeLike    = Temporal.ZonedDateTime | Temporal.PlainDateTime;
-export type ReplaceFunction = (dt: DateTimeLike) => string;
-
-
 type FormatKeys = 'Year02'|'Year04'|'Century'|'YearOfWeek02'|'YearOfWeek04'|
                   'Month1'|'Month02'|'MonthShort'|'MonthLong'|
                   'Day1'|'Day02'|'Day_2'|'DayOfWeek0'|'DayOfWeek1'|'DayOfYear03'|
@@ -15,8 +11,8 @@ type FormatKeys = 'Year02'|'Year04'|'Century'|'YearOfWeek02'|'YearOfWeek04'|
 
 
 // Initialize Intl once at startup
-export const ZONE   = Temporal.Now.timeZoneId();
-export const LOCALE = new Intl.DateTimeFormat().resolvedOptions().locale;
+// @NEXT create helper function(s) to combine the DateTimeFormat calls, and create cached responses
+const LOCALE = new Intl.DateTimeFormat().resolvedOptions().locale;
 const MONTH_SHORT   = new Intl.DateTimeFormat(LOCALE, { month: 'short' });
 const MONTH_LONG    = new Intl.DateTimeFormat(LOCALE, { month: 'long' });
 const WEEKDAY_SHORT = new Intl.DateTimeFormat(LOCALE, { weekday: 'short' });

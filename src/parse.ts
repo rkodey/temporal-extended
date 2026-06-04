@@ -1,12 +1,9 @@
-import  {
-  ZONE,
-} from  './formatter.js';
-
 
 const REGEX_PARSE = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/;
+const ZONE        = Temporal.Now.timeZoneId();
 
 
-export default function parse(inputStr  : string): Temporal.ZonedDateTime {
+export function parse(inputStr  : string): Temporal.ZonedDateTime {
   const match     = inputStr.match(REGEX_PARSE);
   if (match) {
     const [, yr, mm, dd, hour, min, sec, milli] = match;

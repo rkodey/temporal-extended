@@ -1,13 +1,11 @@
-import  format    from  './format.js';
-import  strftime  from  './strftime.js';
-import  parse     from  './parse.js';
-import  { ZONE }  from  './formatter.js';
+import  * as TemporalEx   from  './functional.js';
 
 
-// @TODO compare: isBetween
 // @TODO unicode formatting like date-fns
 // @TODO use dayjs and strftime to replace tests, after moving to module
-// @NEXT create helper function(s) to combine the DateTimeFormat calls, and create cached responses
+
+
+const ZONE        = Temporal.Now.timeZoneId();
 
 
 interface ExtendedBase {

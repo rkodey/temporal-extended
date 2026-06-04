@@ -1,9 +1,5 @@
+import  { Formatter }   from  './formatter.js';
 /* eslint-disable no-use-before-define */
-import  {
-  type DateTimeLike,
-  type ReplaceFunction,
-  Formatter,
-} from  './formatter.js';
 
 
 const STRFTIME    : {
@@ -63,7 +59,7 @@ const STRFTIME    : {
   },
 };
 
-export default function strftime(date: DateTimeLike, formatStr ?: string) {
+export function strftime(date: DateTime, formatStr ?: string) {
   const str = formatStr ?? STRFTIME.FORMAT_DEFAULT;
   return str.replace(STRFTIME.REGEX_FORMAT, (match: string) => {
     const index   = match.slice(-1);

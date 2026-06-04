@@ -13,7 +13,7 @@ const ZONE        = Temporal.Now.timeZoneId();
 const LOOP        = 10_000;
 
 
-await test.suite('Temporal-Extended benchmark', async () => {
+await test.suite('Temporal-Extended mini-benchmark', async () => {
 
   await test.test(`dayjs    ZonedDateTime:  Leading zeroes ${LOOP}`, (_ctx) => {
     const date  = DAYJS(TEST_DATES.LEADING_ZEROES);
